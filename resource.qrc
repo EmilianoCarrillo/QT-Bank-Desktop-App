@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/BD">
+        <file>Clientes.txt</file>
+        <file>CuentasBancarias.txt</file>
+    </qresource>
+</RCC>

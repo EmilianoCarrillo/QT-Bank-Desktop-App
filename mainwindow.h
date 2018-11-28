@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QStandardItemModel>
+#include <QtCore>
+#include"cuentabancaria.h"
+#include"cliente.h"
 
 namespace Ui {
 class MainWindow;
@@ -14,9 +18,51 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    // Métodos útiles
+    void setupUI();
+    void borrarCamposAnadirCliente();
+    // "Base de Datos"
+    void actualizarClientesBDFile();
+    void actualizarClientesList();
+    void actualizarCuentasBDFile();
+    void actualizarCuentasList();
+
+private slots:
+    // Buttons
+    void on_anadirCuentaButton_clicked();
+    void on_cancelarButton_clicked();
+    void on_anadirClienteButton_clicked();
+    void on_cancelarButton_2_clicked();
+    void on_aceptarClienteButton_clicked();
+    void on_aceptarCuentaButton_clicked();
+    //Validar campos
+    void validarAnadirCliente();
+    void validarAnadirCuenta();
+    void on_tipoCuentaComboBox_currentTextChanged(const QString &arg1);
+
+    void on_cuentasTable_clicked();
+    void on_regresarDetailsButton_clicked();
+    void on_verSeleccionButton_clicked();
+
+
+    void on_eliminarCuentaButton_clicked();
+
+
+
+    void on_busqueda_textChanged(const QString &arg1);
+
+    void on_eliminarTitularButton_clicked();
 
 private:
     Ui::MainWindow *ui;
+    QStandardItemModel *cuentasModel;
+    QStringListModel *clientesModel;
+    //QMap porque QHash no ordena, lo hace arbitrario.
+    //QMap es un contenedor que automáticamente ordena ascendentemente por key.
+    QMap<QString, CuentaBancaria> cuentas;
+    QMap<QString, Cliente> clientes;
+
+
 };
 
 #endif // MAINWINDOW_H
