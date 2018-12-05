@@ -24,6 +24,7 @@ public:
     double getSaldo() const;
     QDate getFechaApertura() const;
     Cliente *getTitular() const;
+    void setSaldo(double value);
 };
 
 #endif // CUENTABANCARIA_H

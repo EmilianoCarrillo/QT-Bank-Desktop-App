@@ -19,7 +19,7 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     // Métodos útiles
-    void setupUI();
+    void setupUI(int);
     void borrarCamposAnadirCliente();
     // "Base de Datos"
     void actualizarClientesBDFile();
@@ -39,19 +39,30 @@ private slots:
     void validarAnadirCliente();
     void validarAnadirCuenta();
     void on_tipoCuentaComboBox_currentTextChanged(const QString &arg1);
+    void validarCamposLogin();
 
     void on_cuentasTable_clicked();
     void on_regresarDetailsButton_clicked();
     void on_verSeleccionButton_clicked();
-
-
     void on_eliminarCuentaButton_clicked();
-
-
-
     void on_busqueda_textChanged(const QString &arg1);
-
     void on_eliminarTitularButton_clicked();
+    void on_imprimirReporteButton_clicked();
+    void on_ingresaButton_clicked();
+    void on_cerrarSesionButton_clicked();
+
+    void on_eliminarCuentaButtonPequeo_clicked();
+
+    void on_editarDatosButton_clicked();
+
+    void on_guardarCambiosButton_clicked();
+
+    void on_cancelarEdicionButton_clicked();
+
+    void on_editarSaldoButton_clicked();
+
+    void on_cuentasTable_doubleClicked(const QModelIndex &index);
+
 
 private:
     Ui::MainWindow *ui;

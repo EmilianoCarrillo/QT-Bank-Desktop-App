@@ -25,6 +25,11 @@ Cliente *CuentaBancaria::getTitular() const
     return titular;
 }
 
+void CuentaBancaria::setSaldo(double value)
+{
+    saldo = value;
+}
+
 CuentaBancaria::CuentaBancaria(){}
 
 CuentaBancaria::CuentaBancaria(QString num,  int tipo, double saldo, QDate fechaApertura, Cliente *titular):
@@ -59,7 +64,7 @@ void CuentaBancaria::popularModel(QStandardItemModel *model, int fila)
         break;
     case 2:
         tipoItem->setText("Cheques");
-        saldoItem->setText("--");
+        saldoItem->setText("$" + saldoItem->text());
         break;
     }
 }

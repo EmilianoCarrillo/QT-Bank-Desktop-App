@@ -1,4 +1,5 @@
 #include "cliente.h"
+#include "cuentabancaria.h"
 
 QString Cliente::getNombre() const
 {
@@ -20,8 +21,29 @@ bool Cliente::getSexo() const
     return sexo;
 }
 
-Cliente::Cliente()
-{}
+void Cliente::insertCuenta(QString num, CuentaBancaria &cuenta){
+    cuentas.insert(num, cuenta);
+}
+
+void Cliente::eliminarCuenta(QString num){
+    cuentas[num].~CuentaBancaria();
+    cuentas.remove(num);
+}
+
+QMap<QString, CuentaBancaria> Cliente::getCuentas() const
+{
+    return cuentas;
+}
+
+void Cliente::setAll(QString nuevoNombre, QString nuevoTelefono, QString nuevaDireccion, bool nuevoSexo)
+{
+    nombre = nuevoNombre;
+    telefono = nuevoTelefono;
+    direccion = nuevaDireccion;
+    sexo = nuevoSexo;
+}
+
+Cliente::Cliente(){}
 
 Cliente::Cliente(QString nombre, QString telefono, QString direccion, bool sexo)
                  :nombre(nombre), telefono(telefono), direccion(direccion), sexo(sexo){}

@@ -1,6 +1,19 @@
 <RCC>
-    <qresource prefix="/BD">
-        <file>Clientes.txt</file>
-        <file>CuentasBancarias.txt</file>
+    <qresource prefix="/">
+        <file>styles/stylesheet.css</file>
+    </qresource>
+    <qresource prefix="/assets">
+        <file>assets/logo.png</file>
+        <file>assets/MX..png</file>
+        <file>assets/money.png</file>
+        <file>assets/loginLogo.png</file>
+        <file>assets/icon.png</file>
+        <file>assets/card.png</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file>assets/Raleway-SemiBold.ttf</file>
+        <file>assets/Raleway-Light.ttf</file>
+        <file>assets/Montserrat-Regular.otf</file>
+        <file>assets/Montserrat-Light.otf</file>
     </qresource>
 </RCC>

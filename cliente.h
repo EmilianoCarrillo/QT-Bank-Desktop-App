@@ -11,7 +11,7 @@ private:
     QString telefono;
     QString direccion;
     bool sexo;
-    QMap<QString, CuentaBancaria> *cuentas;
+    QMap<QString, CuentaBancaria> cuentas;
 
 public:
     Cliente();
@@ -21,6 +21,10 @@ public:
     QString getTelefono() const;
     QString getDireccion() const;
     bool getSexo() const;
+    void insertCuenta(QString, CuentaBancaria&);
+    void eliminarCuenta(QString);
+    QMap<QString, CuentaBancaria> getCuentas() const;
+    void setAll(QString, QString, QString, bool);
 };
 
 #endif // CLIENTE_H
